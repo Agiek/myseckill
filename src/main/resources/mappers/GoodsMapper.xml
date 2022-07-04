@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.myseckill.mapper.GoodsMapper">
+    <select id="selectById" resultType="com.example.myseckill.dto.Goods">
+        select * from sk_goods where id = #{id}
+    </select>
+    <insert id="insertGoods" parameterType="com.example.myseckill.dto.Goods" useGeneratedKeys="true" keyProperty="id">
+
+        insert into sk_goods (goods_name,goods_price,goods_stock) values (#{goods_name},#{goods_price},#{goods_stock})
+    </insert>
+    <select id="selectAll" resultType="com.example.myseckill.dto.Goods">
+        select * from sk_goods
+    </select>
+</mapper>
