@@ -4,63 +4,63 @@ import java.util.Date;
 
 public class OrderInfo {
     private Long id;
-    private Long userId;
-    private Long goodsId;
-    private Long  deliveryAddrId;
-    private String goodsName;
-    private Integer goodsCount;
-    private Double goodsPrice;
-    private Integer orderChannel;
+    private Long user_id;
+    private Long goods_id;
+    private Long delivery_addr_id;
+    private String goods_name;
+    private Integer goods_count;
+    private Double goods_price;
+    private Integer order_channel;
     private Integer status;
-    private Date createDate;
-    private Date payDate;
+    private Date create_date;
+    private Date pay_date;
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
-    public Long getGoodsId() {
-        return goodsId;
+    public Long getGoods_id() {
+        return goods_id;
     }
-    public void setGoodsId(Long goodsId) {
-        this.goodsId = goodsId;
+    public void setGoods_id(Long goods_id) {
+        this.goods_id = goods_id;
     }
-    public Long getDeliveryAddrId() {
-        return deliveryAddrId;
+    public Long getDelivery_addr_id() {
+        return delivery_addr_id;
     }
-    public void setDeliveryAddrId(Long deliveryAddrId) {
-        this.deliveryAddrId = deliveryAddrId;
+    public void setDelivery_addr_id(Long delivery_addr_id) {
+        this.delivery_addr_id = delivery_addr_id;
     }
-    public String getGoodsName() {
-        return goodsName;
+    public String getGoods_name() {
+        return goods_name;
     }
-    public void setGoodsName(String goodsName) {
-        this.goodsName = goodsName;
+    public void setGoods_name(String goods_name) {
+        this.goods_name = goods_name;
     }
-    public Integer getGoodsCount() {
-        return goodsCount;
+    public Integer getGoods_count() {
+        return goods_count;
     }
-    public void setGoodsCount(Integer goodsCount) {
-        this.goodsCount = goodsCount;
+    public void setGoods_count(Integer goods_count) {
+        this.goods_count = goods_count;
     }
-    public Double getGoodsPrice() {
-        return goodsPrice;
+    public Double getGoods_price() {
+        return goods_price;
     }
-    public void setGoodsPrice(Double goodsPrice) {
-        this.goodsPrice = goodsPrice;
+    public void setGoods_price(Double goods_price) {
+        this.goods_price = goods_price;
     }
-    public Integer getOrderChannel() {
-        return orderChannel;
+    public Integer getOrder_channel() {
+        return order_channel;
     }
-    public void setOrderChannel(Integer orderChannel) {
-        this.orderChannel = orderChannel;
+    public void setOrder_channel(Integer order_channel) {
+        this.order_channel = order_channel;
     }
     public Integer getStatus() {
         return status;
@@ -68,16 +68,16 @@ public class OrderInfo {
     public void setStatus(Integer status) {
         this.status = status;
     }
-    public Date getCreateDate() {
-        return createDate;
+    public Date getCreate_date() {
+        return create_date;
     }
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreate_date(Date create_date) {
+        this.create_date = create_date;
     }
-    public Date getPayDate() {
-        return payDate;
+    public Date getPay_date() {
+        return pay_date;
     }
-    public void setPayDate(Date payDate) {
-        this.payDate = payDate;
+    public void setPay_date(Date pay_date) {
+        this.pay_date = pay_date;
     }
 }

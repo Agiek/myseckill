@@ -22,5 +22,7 @@
     <!--引入映射文件-->
     <mappers>
         <mapper resource="mappers/GoodsMapper.xml"/>
+        <mapper resource="mappers/OrderInfoMapper.xml"/>
+
     </mappers>
 </configuration>

@@ -6,9 +6,6 @@ import java.util.List;
 
 public interface GoodsMapper {
 
-    /***
-     * 插入新的商品
-     */
     int insertGoods(Goods goods);
     Goods selectById(long id);
     List<Goods> selectAll();
