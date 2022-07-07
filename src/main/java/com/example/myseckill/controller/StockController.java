@@ -1,8 +1,9 @@
 package com.example.myseckill.controller;
 
 import com.example.myseckill.dto.Goods;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.myseckill.mapper.GoodsMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -10,7 +11,13 @@ import java.util.List;
 @RequestMapping("/stock")
 public class StockController {
 
-//    public List<Goods> goodsList() {
-//
-//    }
+    @Autowired
+    private GoodsMapper goodsMapper;
+    @GetMapping
+    @ResponseBody
+    public List<Goods> goodsList() {
+        return goodsMapper.selectAll();
+    }
+
+
 }

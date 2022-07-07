@@ -7,10 +7,14 @@
         select * from sk_goods where id = #{id}
     </select>
     <insert id="insertGoods" parameterType="com.example.myseckill.dto.Goods" useGeneratedKeys="true" keyProperty="id">
-
         insert into sk_goods (goods_name,goods_price,goods_stock) values (#{goods_name},#{goods_price},#{goods_stock})
     </insert>
     <select id="selectAll" resultType="com.example.myseckill.dto.Goods">
         select * from sk_goods
     </select>
+<!--    优化点 -->
+    <update id="reduceStockById">
+        update sk_goods set goods_stock = goods_stock - #{count,jdbcType=INTEGER}
+                             where id = #{id,jdbcType=BIGINT} and goods_stock  >= #{count,jdbcType=INTEGER}
+    </update>
 </mapper>

@@ -49,12 +49,22 @@ public class GoodsMapperTest {
 
         //selectById
         Goods goods2 = goodsMapper.selectById(goods.getId());
-        Assert.assertEquals(goods2.getId(),goods.getId());
-        Assert.assertEquals(goods2.getGoods_price(), goods.getGoods_price());
-        Assert.assertEquals(goods2.getGoods_stock(), goods.getGoods_stock());
-        Assert.assertEquals(goods2.getGoods_name(), goods.getGoods_name());
+        Assert.assertTrue(goods2.equals(goods));
         // Release resources
         sqlSession.close();
+    }
+    @Test
+    public void updateStockById() throws IOException {
+        SqlSession sqlSession = this.getSqlSessionFactory().openSession();
+        GoodsMapper goodsMapper = sqlSession.getMapper(GoodsMapper.class);
+        Goods goods = new Goods();
+        goods.setGoods_name("iphone 13");
+        goods.setGoods_price(7000.0);
+        goods.setGoods_stock(9);
+        int info = goodsMapper.insertGoods(goods);
+        Assert.assertTrue(info == 1);//insert success
+        goodsMapper.reduceStockById(goods.getId(), 1);
+        Assert.assertEquals(goods.getGoods_stock() -1 , (long)goodsMapper.selectById(goods.getId()).getGoods_stock());
     }
 
     private SqlSessionFactory getSqlSessionFactory() throws IOException {

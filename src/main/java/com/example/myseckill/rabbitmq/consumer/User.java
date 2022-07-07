@@ -11,7 +11,8 @@ import java.io.IOException;
 @Component
 public class User {
 
-    @RabbitListener(queues = MessagingConfig.QUEUE)
+    //可配置多线程
+//    @RabbitListener(queues = MessagingConfig.QUEUE)
     public void consumeMessageFromQueue(Message message, Channel channel) {
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
         try {

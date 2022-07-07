@@ -52,11 +52,7 @@ public class OrderInfoMapperTest {
 
         //selectById
         OrderInfo orderInfo2 = orderInfoMapper.selectById(orderInfo.getId());
-        Assert.assertEquals(orderInfo2.getId(),orderInfo.getId());
-        Assert.assertEquals(orderInfo2.getGoods_id(), orderInfo.getGoods_id());
-        Assert.assertEquals(orderInfo2.getGoods_name(), orderInfo.getGoods_name());
-        Assert.assertEquals(orderInfo2.getGoods_count(), orderInfo.getGoods_count());
-        Assert.assertEquals(orderInfo2.getGoods_price(), orderInfo.getGoods_price());
+        Assert.assertTrue(orderInfo2.equals(orderInfo));
         // Release resources
         sqlSession.close();
     }
