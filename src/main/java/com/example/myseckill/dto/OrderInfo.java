@@ -18,7 +18,7 @@ public class OrderInfo {
     private Integer goods_count;
     private Double goods_price;
     private Integer order_channel;
-    private Integer status;
+    private Integer status; //0 for
     private Date create_date;
     private Date pay_date;
 

@@ -1,10 +1,7 @@
 package com.example.myseckill.controller;
 
 
-import com.example.myseckill.dto.Goods;
-import com.example.myseckill.dto.Order2;
-import com.example.myseckill.dto.OrderInfo;
-import com.example.myseckill.dto.OrderStatus;
+import com.example.myseckill.dto.*;
 import com.example.myseckill.rabbitmq.config.MessagingConfig;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -29,8 +26,10 @@ public class KillDemo
 //        order2.setOrderId(UUID.randomUUID().toString());
         OrderInfo orderInfo = new OrderInfo();
         orderInfo.setGoods_id(1L);
-        orderInfo.setGoods_count(random.nextInt(3));
+//        orderInfo.setGoods_count(random.nextInt(3));
+        orderInfo.setGoods_count(1);
         orderInfo.setId(random.nextLong());
+
         //OrderStatus orderStatus = new OrderStatus(order2, "PROCESS","order placed successfully in " + restaurantName );
         try {
             template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_KEY, orderInfo);
