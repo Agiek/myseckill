@@ -19,18 +19,19 @@ public class MergeCyclicCounter {
     /** Condition to wait on until tripped */
     private final Condition trip = lock.newCondition();
     /** The number of parties */
-    private final int parties = 5;
+    private final int parties = 10;
+    /**
+     * Number of parties still waiting. Counts down from parties to 0
+     * on each generation.  It is reset to parties on each new
+     * generation or when broken.
+    */
+     private volatile int count = 10;
     /** The current generation */
     /** cycle time */
     private final long maxWaitingTime = 200;
     private volatile Generation generation = new Generation();
 
-    /**
-     * Number of parties still waiting. Counts down from parties to 0
-     * on each generation.  It is reset to parties on each new
-     * generation or when broken.
-     */
-    private volatile int count = 5;
+
 
     /**
      * Updates state on barrier trip and wakes up everyone.

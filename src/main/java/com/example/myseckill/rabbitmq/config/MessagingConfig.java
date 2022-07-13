@@ -48,8 +48,8 @@ public class MessagingConfig {
     @Bean("customContainerFactory")
     public SimpleRabbitListenerContainerFactory containerFactory(SimpleRabbitListenerContainerFactoryConfigurer configurer, ConnectionFactory connectionFactory) {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
-        factory.setConcurrentConsumers(10);  //设置线程数
-        factory.setMaxConcurrentConsumers(10); //最大线程数
+        factory.setConcurrentConsumers(30);  //设置线程数
+        factory.setMaxConcurrentConsumers(50); //最大线程数
         configurer.configure(factory, connectionFactory);
         return factory;
     }
